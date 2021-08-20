@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ffff : MonoBehaviour
+{
+    public Rigidbody2D Rb;
+  public GameObject sus;
+    // Start is called before the first frame update
+    public Rigidbody2D rb;
+    // Start is called before the first frame update
+    public int speed = 1;
+    
+float x;    
+    
+
+    // Update is called once per frame
+
+     
+        
+    
+   
+     void Start()
+    {
+       rb = gameObject.GetComponent<Rigidbody2D>();
+    }
+       
+    // Update is called once per frame
+    void Update()
+    
+    {
+        if (sus.transform.position.x - transform.position.x <= 2 ) {
+         if (sus.transform.position.y - transform.position.y <= 2) {
+         speed = 2; 
+         
+         }
+         else
+         {
+             speed = 4;
+         }
+        }
+         else{
+            speed = 4;
+         }
+          float x = transform.position.x;
+        float y = transform.position.y;
+   if (Input.GetKeyDown ("a")){
+       rb.velocity = (Vector3.left * speed);
+   }  
+    if (Input.GetKeyDown ("d")){
+       rb.velocity = (Vector3.right * speed);
+  
+ 
+   }
+  if (Input.GetKeyUp ("d")){
+       rb.velocity = (Vector3.left * 0);
+   }  
+      if (Input.GetKeyUp ("a")){
+       rb.velocity = (Vector3.right * 0);
+        
+   }
+     if (Input.GetKeyDown ("w")){
+       rb.velocity = ( Vector3.up * speed);
+     }
+    if (Input.GetKeyDown ("s")){
+       rb.velocity = (Vector3.down * speed);
+   }
+  if (Input.GetKeyUp ("w")){
+       rb.velocity = (Vector3.down * 0);
+   }  
+      if (Input.GetKeyUp ("s")){
+       rb.velocity = (Vector3.up * 0);
+   }     
+    
+    }
+}
